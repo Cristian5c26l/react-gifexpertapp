@@ -10,11 +10,12 @@ export const useFetchGifs = (category) => {
         loading: true
     });
 
+    //getGifs es una promesa que retorna (en teoria con exito) un arreglo de gifs, este arreglo es tratado en el then y nombrado imgsGifs
     useEffect(()=>{
         getGifs(category).then(imgsGifs=>{
 
             //setTimeout(()=>{
-                console.log(imgsGifs);//imprime un arreglo de 10 objetos
+                console.log(imgsGifs);//imprime un arreglo de 10 objetos, que son los gifs de getGifs
                 setState({
                     data: imgsGifs,
                     loading: false
